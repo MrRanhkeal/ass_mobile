@@ -51,7 +51,9 @@ class RegisterViewModel extends GetxController {
         onMessageError("${response.message}");
       } else {
         onMessageSuccess("${response.message}");
-        Get.offAllNamed('/login'); // Navigate to login screen and clear navigation stack
+        await Future.delayed(Duration(milliseconds: 1000)); // Wait for 1 second
+        // Get.offAllNamed('/login'); // Navigate to login screen and clear stack
+        Get.offAllNamed('/api/auth/login');
       }
       isRegisterLoading(false);
     }

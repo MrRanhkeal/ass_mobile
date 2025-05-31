@@ -20,8 +20,12 @@ class Api {
   static const String refreshTokenPath = '/api/oauth/refresh';
   
   // Categories endpoint
-  // static const String getAllCategoriesPath = '/api/app/category/list';
   static const String getAllCategoriesPath = '/api/category/get-list';
+  static const String getAllProductsPath = '/api/product/get-list';
+  static const String getAllSuppliersPath = '/api/supplier/get-list';
+  static const String createSupplierPath = '/api/supplier/create';
+  static const String updateSupplierPath = '/api/supplier/update';
+  static const String deleteSupplierPath = '/api/supplier/delete';
 
   // Authentication methods
   static Future<Map<String, dynamic>> register(Map<String, dynamic> userData) async {
