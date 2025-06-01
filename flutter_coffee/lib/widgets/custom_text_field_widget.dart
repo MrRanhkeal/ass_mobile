@@ -7,6 +7,7 @@ class CustomTextFieldWidget extends StatefulWidget {
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final bool obscureText;
+  final TextInputType? keyboardType;
 
   const CustomTextFieldWidget({
     super.key,
@@ -16,6 +17,7 @@ class CustomTextFieldWidget extends StatefulWidget {
     this.suffixIcon,
     this.controller,
     this.obscureText = false,
+    this.keyboardType,
   });
 
   @override
@@ -28,6 +30,7 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
     return TextFormField(
       controller: widget.controller,
       obscureText: widget.obscureText,
+      keyboardType: widget.keyboardType,
       decoration: InputDecoration(
         hintText: widget.hintText,
         prefixIcon: widget.prefixIcon,

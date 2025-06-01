@@ -7,12 +7,13 @@ import 'package:flutter_coffee/enum/status.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class HomeViewModel extends GetxController{
+class HomeViewModel extends GetxController {
   var articleRepo = ArticleRepositoryImpl();
   var loadingCategoryStatus = Status.loading.obs;
   var loadingProductStatus = Status.loading.obs;
   var categoriesList = <CategoryResponse>[].obs;
   var productsList = <ProductResponse>[].obs;
+  var cartItemCount = 0.obs;
 
   setLoadingCategory(Status value)=> loadingCategoryStatus = value.obs;
   setLoadingProduct(Status value) => loadingProductStatus = value.obs;

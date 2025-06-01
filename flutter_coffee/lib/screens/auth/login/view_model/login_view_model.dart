@@ -13,6 +13,11 @@ class LoginViewModel extends GetxController {
   var usernameController = TextEditingController().obs;
   var passwordController = TextEditingController().obs;
   var isLoginLoading = false.obs;
+  var isPasswordVisible = false.obs;
+
+  void togglePasswordVisibility() {
+    isPasswordVisible.value = !isPasswordVisible.value;
+  }
 
   @override
   void onInit() {

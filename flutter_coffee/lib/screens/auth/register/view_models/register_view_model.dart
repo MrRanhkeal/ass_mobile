@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_coffee/app/routes.dart';
 import 'package:flutter_coffee/data/remote/models/request/Register_request.dart';
 import 'package:flutter_coffee/data/remote/repositories/impl/auth_repository_impl.dart';
 import 'package:get/get.dart';
@@ -51,9 +52,15 @@ class RegisterViewModel extends GetxController {
         onMessageError("${response.message}");
       } else {
         onMessageSuccess("${response.message}");
-        await Future.delayed(Duration(milliseconds: 1000)); // Wait for 1 second
-        // Get.offAllNamed('/login'); // Navigate to login screen and clear stack
-        Get.offAllNamed('/api/auth/login');
+        // Clear the form
+        nameController.value.clear();
+        usernameController.value.clear();
+        passwordController.value.clear();
+        confirmPasswordController.value.clear();
+        
+        // Show success message and navigate
+        await Future.delayed(const Duration(milliseconds: 1500)); // Wait for 1.5 seconds
+        Get.offAllNamed('/login'); // Navigate to login screen and clear stack
       }
       isRegisterLoading(false);
     }
