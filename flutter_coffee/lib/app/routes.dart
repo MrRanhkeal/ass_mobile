@@ -1,5 +1,6 @@
 import 'package:flutter_coffee/screens/auth/login/view/login_view.dart';
 import 'package:flutter_coffee/screens/auth/register/view/register_view.dart';
+import 'package:flutter_coffee/screens/cart/view/cart_view.dart';
 import 'package:flutter_coffee/screens/home/view/home_view.dart';
 import 'package:flutter_coffee/screens/splash/view/splash_view.dart';
 import 'package:flutter_coffee/screens/customer/view/customer_view.dart';
@@ -46,6 +47,11 @@ class Routes {
       name: RouteName.supplierView,
       page: () => SupplierView(),
       transition: Transition.cupertinoDialog,
+    ),
+    GetPage(
+      name: RouteName.cartView,
+      page: () => CartView(),
+      transition: Transition.rightToLeftWithFade,
     )
   ];
 }
@@ -59,4 +65,5 @@ class RouteName {
   static String categoryView = "/category";
   static String productView = "/product";
   static String supplierView = "/supplier";
+  static String cartView = "/cart";
 }

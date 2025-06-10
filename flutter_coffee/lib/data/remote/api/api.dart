@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class Api {
   // static const String baseUrl = 'http://localhost:54569';
-  static const String baseUrl = 'http://10.0.2.2:8081';  // Special Android emulator IP for localhost
+  static const String baseUrl = 'http://10.10.20.241:8081';  // Special Android emulator IP for localhost
   // static const String baseUrl = 'http://192.168.200.52:8081';
   // Authentication endpoints
   static const String getListPath = '/api/auth/get-list';

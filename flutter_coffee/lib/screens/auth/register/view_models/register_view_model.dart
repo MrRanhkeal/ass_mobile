@@ -46,31 +46,30 @@ class RegisterViewModel extends GetxController {
       registerRequest.value.username = usernameController.value.text;
       registerRequest.value.password = passwordController.value.text;
       // role_id will use the default value of 2 from the model
-      
+
       var response = await authRepository.register(registerRequest.value);
-      if (response.code != "200") {
-        onMessageError("${response.message}");
-      } else {
+      if (response.isSuccess == true) {
         onMessageSuccess("${response.message}");
         // Clear the form
         nameController.value.clear();
         usernameController.value.clear();
         passwordController.value.clear();
         confirmPasswordController.value.clear();
-        
+
         // Show success message and navigate
         await Future.delayed(const Duration(milliseconds: 1500)); // Wait for 1.5 seconds
-        Get.offAllNamed('/login'); // Navigate to login screen and clear stack
+        Get.offAllNamed('/login');
+      } else {
+        onMessageError("${response.message}");
       }
       isRegisterLoading(false);
+
     }
   }
-
   onMessageError(message) {
-    Get.snackbar("Error", message);
-  }
-
-  onMessageSuccess(message) {
     Get.snackbar("Success", message);
+  }
+  onMessageSuccess(message) {
+    Get.snackbar("Error", message);
   }
 }

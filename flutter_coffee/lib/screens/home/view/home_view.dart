@@ -21,12 +21,15 @@ class HomeView extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: badges.Badge(
-              badgeContent: Obx(() => Text(
-                    viewModel.cartItemCount.toString(),
-                    style: const TextStyle(color: Colors.white),
-                  )),
-              child: const Icon(Icons.shopping_cart, color: Colors.white),
+            child: GestureDetector(
+              onTap: () => Get.toNamed(RouteName.cartView),
+              child: badges.Badge(
+                badgeContent: Obx(() => Text(
+                  viewModel.cartItemCount.toString(),
+                  style: const TextStyle(color: Colors.white),
+                )),
+                child: const Icon(Icons.shopping_cart, color: Colors.white),
+              ),
             ),
           ),
           IconButton(
@@ -220,9 +223,7 @@ class HomeView extends StatelessWidget {
                     const Spacer(),
                     IconButton(
                       icon: const Icon(Icons.add_circle, color: Colors.blue, size: 28),
-                      onPressed: () {
-                        viewModel.cartItemCount++;
-                      },
+                      onPressed: () => viewModel.addToCart(product),
                       padding: EdgeInsets.zero,
                       constraints: const BoxConstraints(),
                     ),
