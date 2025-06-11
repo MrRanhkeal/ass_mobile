@@ -71,7 +71,7 @@ class InvoiceView extends StatelessWidget {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          '123 Coffee Street\nPhnom Penh, Cambodia',
+                          'V-Friend Coffee Shop\nSihanoukville, Cambodia\nTel:(855) 72 715 751',
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
@@ -104,10 +104,20 @@ class InvoiceView extends StatelessWidget {
                   ),
                   child: const Row(
                     children: [
-                      Expanded(flex: 2, child: Text('Item', style: TextStyle(fontWeight: FontWeight.bold))),
-                      Expanded(child: Text('Qty', style: TextStyle(fontWeight: FontWeight.bold))),
-                      Expanded(child: Text('Price', style: TextStyle(fontWeight: FontWeight.bold))),
-                      Expanded(child: Text('Total', style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.right)),
+                      Expanded(
+                          flex: 2,
+                          child: Text('Item',
+                              style: TextStyle(fontWeight: FontWeight.bold))),
+                      Expanded(
+                          child: Text('Qty',
+                              style: TextStyle(fontWeight: FontWeight.bold))),
+                      Expanded(
+                          child: Text('Price',
+                              style: TextStyle(fontWeight: FontWeight.bold))),
+                      Expanded(
+                          child: Text('Total',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.right)),
                     ],
                   ),
                 ),
@@ -116,7 +126,8 @@ class InvoiceView extends StatelessWidget {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: invoice.items.length,
-                  separatorBuilder: (context, index) => const Divider(height: 16),
+                  separatorBuilder: (context, index) =>
+                      const Divider(height: 16),
                   itemBuilder: (context, index) {
                     final item = invoice.items[index];
                     return Row(
@@ -128,7 +139,8 @@ class InvoiceView extends StatelessWidget {
                             children: [
                               Text(
                                 item.name,
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 item.category,

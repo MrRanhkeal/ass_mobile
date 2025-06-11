@@ -21,7 +21,7 @@ class HomeViewModel extends GetxController {
 
   // Computed property for cart total
   double get cartTotal => cartList.fold(0, (sum, item) => sum + item.price);
-  
+
   // Add to cart method
   void addToCart(ProductResponse product) {
     cartList.add(product);
@@ -51,7 +51,7 @@ class HomeViewModel extends GetxController {
   void createInvoice() {
     // Create a map to count quantities of each product
     final Map<String, InvoiceItem> itemMap = {};
-    
+
     for (var product in cartList) {
       if (itemMap.containsKey(product.id)) {
         // Increment quantity if product already exists
@@ -129,11 +129,12 @@ class HomeViewModel extends GetxController {
       productsList.addAll([
         ProductResponse(
           id: '1',
-          name: 'Cappuccino',
+          name: 'americano',
           category: 'Coffee',
           brand: 'Coffee House',
           price: 1.99,
-          imagePath: 'https://i.imgur.com/2aBjCR7.jpg',
+          imagePath:
+              'https://images.deliveryhero.io/image/fd-kh/Products/513.jpg?width=%s',
           description: 'Classic Italian coffee drink',
           isActive: true,
           createdAt: DateTime.now().toIso8601String(),
@@ -141,11 +142,12 @@ class HomeViewModel extends GetxController {
         ),
         ProductResponse(
           id: '2',
-          name: 'Latte',
+          name: 'black coffee',
           category: 'Coffee',
           brand: 'Coffee House',
           price: 1.49,
-          imagePath: 'https://i.imgur.com/tEf7zGq.jpg',
+          imagePath:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaGwViNZ4JqCdZooCj8Q3VCl6AcEi3dRMVHjsE8e3Y2X8ZdYtMqYM7M9rUmm-QjfKhTEM&usqp=CAU',
           description: 'Espresso with steamed milk',
           isActive: true,
           createdAt: DateTime.now().toIso8601String(),
@@ -153,11 +155,12 @@ class HomeViewModel extends GetxController {
         ),
         ProductResponse(
           id: '3',
-          name: 'Croissant',
-          category: 'Snacks',
-          brand: 'Bakery',
+          name: 'amazon hot chocolate',
+          category: 'Coffee',
+          brand: 'coffee House',
           price: 1.99,
-          imagePath: 'https://i.imgur.com/2aBjCR7.jpg',
+          imagePath:
+              'https://www.shopteenee.com/media/catalog/product/cache/dc438c01978fccaba9af4fb6763524f3/t/0/t07050020_111.jpg',
           description: 'Buttery, flaky pastry',
           isActive: true,
           createdAt: DateTime.now().toIso8601String(),
@@ -169,7 +172,8 @@ class HomeViewModel extends GetxController {
           category: 'Tea',
           brand: 'Tea House',
           price: 1.49,
-          imagePath: 'https://i.imgur.com/HOU9gZO.jpg',
+          imagePath:
+              'https://images.deliveryhero.io/image/fd-kh/products/2438511.jpg?width=%s',
           description: 'Traditional Japanese green tea',
           isActive: true,
           createdAt: DateTime.now().toIso8601String(),
@@ -178,10 +182,11 @@ class HomeViewModel extends GetxController {
         ProductResponse(
           id: '4',
           name: 'Mocha',
-          category: 'Tea',
+          category: 'coffee',
           brand: 'coffee House',
           price: 1.49,
-          imagePath: 'https://i.imgur.com/M73FiE2.jpg',
+          imagePath:
+              'https://images.deliveryhero.io/image/fd-kh/Products/513.jpg?width=%s',
           description: 'A mocha is a coffee drink that is made with espresso',
           isActive: true,
           createdAt: DateTime.now().toIso8601String(),
@@ -193,8 +198,38 @@ class HomeViewModel extends GetxController {
           category: 'coffee',
           brand: 'coffee House',
           price: 2.00,
-          imagePath: 'https://i.imgur.com/wV5AoUV.jpg',
-          description: 'A cappuccino is a coffee drink that is made with espresso',
+          imagePath:
+              'https://www.cafe-amazon.com/BackEnd/TempProducts/a76c2dfb620b46a095eb4036972f04b0.png',
+          description:
+              'A cappuccino is a coffee drink that is made with espresso',
+          isActive: true,
+          createdAt: DateTime.now().toIso8601String(),
+          updatedAt: DateTime.now().toIso8601String(),
+        ),
+        ProductResponse(
+          id: '4',
+          name: 'ice amazon',
+          category: 'coffee',
+          brand: 'coffee House',
+          price: 2.00,
+          imagePath:
+              'https://images.deliveryhero.io/image/talabat/Menuitems/Iced_Amazon_637538311345352939.jpg',
+          description:
+              'A cappuccino is a coffee drink that is made with espresso',
+          isActive: true,
+          createdAt: DateTime.now().toIso8601String(),
+          updatedAt: DateTime.now().toIso8601String(),
+        ),
+        ProductResponse(
+          id: '4',
+          name: 'amazon tea',
+          category: 'Tea',
+          brand: 'tea House',
+          price: 2.00,
+          imagePath:
+              'https://images.deliveryhero.io/image/fd-kh/Products/591948.jpg?width=%s',
+          description:
+              'A cappuccino is a coffee drink that is made with espresso',
           isActive: true,
           createdAt: DateTime.now().toIso8601String(),
           updatedAt: DateTime.now().toIso8601String(),

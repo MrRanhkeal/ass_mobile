@@ -57,18 +57,20 @@ class RegisterViewModel extends GetxController {
         confirmPasswordController.value.clear();
 
         // Show success message and navigate
-        await Future.delayed(const Duration(milliseconds: 1500)); // Wait for 1.5 seconds
+        await Future.delayed(
+            const Duration(milliseconds: 1500)); // Wait for 1.5 seconds
         Get.offAllNamed('/login');
       } else {
         onMessageError("${response.message}");
       }
       isRegisterLoading(false);
-
     }
   }
+
   onMessageError(message) {
     Get.snackbar("Success", message);
   }
+
   onMessageSuccess(message) {
     Get.snackbar("Error", message);
   }
